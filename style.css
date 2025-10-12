@@ -134,3 +134,16 @@ justify-content: center;
     background: #e60a0a;
 }
 
+.fa-spinner {
+animation: spinner 750ms infinite;
+z-index: -20;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
