@@ -16,6 +16,11 @@ body {
     background-color: black;
 }
 
+#main {
+    background-image: url('./assets/movie\ collage.jpg');
+
+}
+
 .nav__link {
     text-decoration: none;
     font-size: 24px;
@@ -78,7 +83,6 @@ background-color: black;
 width: 100%;
 min-height: 100vh;
 padding: 5%;
-background-image: url('./assets/movie\ collage.jpg');
 background-position: center;
 background-size: cover;
 display: flex;
