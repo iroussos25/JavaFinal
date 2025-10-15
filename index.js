@@ -1,13 +1,35 @@
-import React, { useState } from 'react';
+async function main() {
 
-async function main(){
-    console.log(await fetch("http://www.omdbapi.com/?i=tt3896198&apikey=279e89f2").json())
+  const movies = await fetch("http://www.omdbapi.com/?s=lethal&apikey=279e89f2");
 
-}
+  const data = await movies.json();
 
-main()
+  console.log(
+    data
+    .map(
 
+      // const movieListEl = document.querySelector('.movie__list');
+      
+      // movieListEl.innerHTML = movieData
+      // .map(
+            (movies) => `<div class="movie-card">
+                    <div class="movie-card__container">
+                      <h3><b>Title:</b> Title </h3>
+                      <p><b>Type:</b> Movie</p>
+                      <p><b>Year:</b> year</p>
+                     <p><b>Poster:</b> <a href="http://www.omdbapi.com/?i=tt3896198&apikey=279e89f2" target="_blank">website.website</a></p>
+                    </div>
+                 </div>`
+        //            )
+        //            .join('')
+        
+        
+    ));
+    
+    }
 
+main();
+ 
 
 
 
@@ -51,6 +73,4 @@ main()
  //           <h3 class="movie__title">${movie.Title}</h3>
  //           <p class="movie__year">${movie.Year}</p>
  //       </div>
-    </div>
-    `
-}
+  //  </div>
