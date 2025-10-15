@@ -3,15 +3,10 @@ async function main() {
   const movies = await fetch("http://www.omdbapi.com/?s=lethal&apikey=279e89f2");
 
   const data = await movies.json();
-
-  console.log(
-    data
+   const movieListEl = document.querySelector('.movie-list');
+    movieListEl.innerHTML = data.Search
     .map(
 
-      // const movieListEl = document.querySelector('.movie__list');
-      
-      // movieListEl.innerHTML = movieData
-      // .map(
             (movies) => `<div class="movie-card">
                     <div class="movie-card__container">
                       <h3><b>Title:</b> Title </h3>
@@ -20,12 +15,13 @@ async function main() {
                      <p><b>Poster:</b> <a href="http://www.omdbapi.com/?i=tt3896198&apikey=279e89f2" target="_blank">website.website</a></p>
                     </div>
                  </div>`
-        //            )
-        //            .join('')
         
         
-    ));
+                );
+                
+                .join('')
     
+    console.log(data.Search);
     }
 
 main();
