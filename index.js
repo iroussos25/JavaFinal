@@ -6,24 +6,24 @@ async function main() {
    const movieListEl = document.querySelector('.movie-list')
     movieListEl.innerHTML = (data.Search || [])
     .map(
-      (movie) => 
-      `<div class="movie-card__container">
+      (movie) => movieHTML(movie)).join('');
+    }
+
+    main()
+    function movieHTML(movie) {
+        return `<div class="movie-card__container">
         <div class="movie-card">
                       <h3>${movie.Title} </h3>
+                      <img src="${movie.Poster}" alt="${movie.Title}" />
                       <p><b>Type:</b> ${movie.Type}</p>
                       <p><b>Year:</b> ${movie.Year} </p>
-                      <img src="${movie.Poster}" alt="${movie.Title}" />
+                      <p class="imdb__link"><b>imdbID:</b>${movie.imdbID}" <a href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank"></p>
+                      
                  </div>
                     </div>`
-        
-        
-                )
-                
-                .join('')
-    console.log(data.Search)
+            console.log(data.Search)
             }
             
-            main()
             
 
 
