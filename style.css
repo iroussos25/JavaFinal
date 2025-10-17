@@ -16,6 +16,10 @@ body {
     background-color: black;
 }
 
+#search__input {
+    color: #1e1d2b;
+}
+
 h3 {
     color: rgb(55, 55, 111);
     font-weight: 900;

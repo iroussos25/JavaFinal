@@ -1,6 +1,15 @@
-async function main() {
+function captureData() {
+  
+}
 
-  const movies = await fetch("http://www.omdbapi.com/?s=lethal&apikey=279e89f2");
+
+
+let userInput = document.querySelector('#search__input').value;
+
+async function main() {
+  
+  
+  const movies = await fetch(`http://www.omdbapi.com/?s=${userInput}&apikey=279e89f2`);
 
   const data = await movies.json();
    const movieListEl = document.querySelector('.movie-list')
@@ -17,7 +26,7 @@ async function main() {
                       <img src="${movie.Poster}" alt="${movie.Title}" />
                       <p><b>Type:</b> ${movie.Type}</p>
                       <p><b>Year:</b> ${movie.Year} </p>
-                      <p class="imdb__link"><b>imdbID:</b>${movie.imdbID}" <a href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank"></p>
+                      <p class="imdb__link"><b>imdbID:</b>${movie.imdbID} <a href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank"></p>
                       
                  </div>
                     </div>`
