@@ -8,7 +8,11 @@ let userInput = document.querySelector('#search__input').value;
 
 async function main() {
   
-  
+  document.getElementById('submit__button').addEventListener('click', function(event) {
+    event.preventDefault(); 
+  });
+  userInput = document.querySelector('#search__input').value;
+
   const movies = await fetch(`http://www.omdbapi.com/?s=${userInput}&apikey=279e89f2`);
 
   const data = await movies.json();
@@ -23,15 +27,16 @@ async function main() {
         return `<div class="movie-card__container">
         <div class="movie-card">
                       <h3>${movie.Title} </h3>
-                      <img src="${movie.Poster}" alt="${movie.Title}" />
+                      <img src="${movie.Poster}"alt="${movie.Title}" />
                       <p><b>Type:</b> ${movie.Type}</p>
                       <p><b>Year:</b> ${movie.Year} </p>
                       <p class="imdb__link"><b>imdbID:</b>${movie.imdbID} <a href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank"></p>
                       
                  </div>
                     </div>`
+                    if (!movie.Poster) then (movie.Poster = './assets/no image.jpg')                    }
             console.log(data.Search)
-            }
+
             
             
 
