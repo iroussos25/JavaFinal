@@ -27,7 +27,7 @@ async function main() {
         return `<div class="movie-card__container">
         <div class="movie-card">
                       <h3>${movie.Title} </h3>
-                      <img src= "${movie.Poster || "./assets/noimage.jpg"} "alt="${movie.Title}" />
+                      <img src= "${movie.Poster || assets/no_image.jpg}" "alt="${movie.Title}" />
                       <p><b>Type:</b> ${movie.Type}</p>
                       <p><b>Year:</b> ${movie.Year} </p>
                       <p class="imdb__link"><b>imdbID:</b>${movie.imdbID} <a href="https://www.imdb.com/title/${movie.imdbID}/" target="_blank"></p>
