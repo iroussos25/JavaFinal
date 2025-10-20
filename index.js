@@ -6,20 +6,38 @@ function captureData() {
 
 let userInput = document.querySelector('#search__input').value;
 
+
+let buttonEl = document.querySelector('#submit__button');
+buttonEl.addEventListener('click', () => {
+
+  buttonEl.innerHTML = <i class="fas fa-spinner fa-spin-pulse"></i>;
+  buttonEl.disabled=true;
+  buttonEl.computedStyleMap.opacity = 0.5;
+  
+  setTimeout(() => {
+    buttonEl.innerHTML = <i class="fa-solid fa-magnifying-glass"></i>;
+    buttonEl.disabled=false;
+    buttonEl.computedStyleMap.opacity = 1;
+  }
+  , 3000)
+});
+
+
 async function main() {
   
   document.getElementById('submit__button').addEventListener('click', function(event) {
     event.preventDefault(); 
   });
+
   userInput = document.querySelector('#search__input').value;
-
+  
   const movies = await fetch(`http://www.omdbapi.com/?s=${userInput}&apikey=279e89f2`);
-
+  
   const data = await movies.json();
-   const movieListEl = document.querySelector('.movie-list')
-    movieListEl.innerHTML = (data.Search || [])
-    .map(
-      (movie) => movieHTML(movie)).join('');
+  const movieListEl = document.querySelector('.movie-list')
+  movieListEl.innerHTML = (data.Search || [])
+  .map(
+    (movie) => movieHTML(movie)).join('');
     }
 
     main()
@@ -34,12 +52,8 @@ async function main() {
                       
                  </div>
                     </div>`
-            console.log(data.Search)
+            
     }
-
-            
-            
-
 
 
 
