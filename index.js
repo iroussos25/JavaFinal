@@ -32,7 +32,7 @@ async function main() {
       if (data.Response === "True") {
         movieListEl.innerHTML = data.Search.map(movie => movieHTML(movie)).join('');
       } else {
-        movieListEl.innerHTML = '<p style="text-align: center; padding: 20px;">No movies found. Try another search!</p>';
+        movieListEl.innerHTML = '<p style="text-align: center; color: white; padding: 20px;">No movies found. Try another search!</p>';
       }
       
       // Keep spinner for 3 seconds total
