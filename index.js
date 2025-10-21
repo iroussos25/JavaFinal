@@ -75,3 +75,11 @@ function movieHTML(movie) {
 // Initialize when page loads
 main();
 
+function openMenu() {
+document.body.classList += " menu--open"
+}
+
+function closeMenu() {
+document.body.classList.remove ('menu--open')
+
+}
